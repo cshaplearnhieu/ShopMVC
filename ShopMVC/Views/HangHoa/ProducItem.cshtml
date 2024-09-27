@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ShopMVC.ViewModels.HangHoaVM>
+
+@foreach (var item in Model)
+{
+	<div class="col-md-6 col-lg-6 col-xl-4 d-flex">
+		<div class="rounded position-relative fruite-item d-flex flex-column w-100">
+			<div class="fruite-img">
+				<a asp-action="Detail" asp-controller="HangHoa" asp-route-id="@item.MaHh">
+					<img src="~/Hinh/HangHoa/@item.Hinh" class="img-fluid w-100 rounded-top" alt="@item.TenHh" style="height: 40vh;font-size: 0.5rem; object-fit: cover;">
+				</a>
+			</div>
+			<div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">@item.TenLoai</div>
+			<div class="p-4 border border-secondary border-top-0 rounded-bottom d-flex flex-column justify-content-between flex-grow-1">
+				<div>
+					<a asp-action="Detail" asp-controller="HangHoa" asp-route-id="@item.MaHh">
+						<h4 class="mb-2" style="max-height: 11vh; overflow: hidden;">@item.TenHh</h4>
+					</a>
+					<p style="max-height: 15vh; overflow: hidden; text-overflow: ellipsis;">@item.MoTaNgan</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-end mt-auto">
+					<p style="color:#fd475a;" class=" fs-5 fw-bold mb-0">@item.DonGia đ</p>
+					<a asp-action="AddToCart" asp-controller="Cart" asp-route-id="@item.MaHh" class="btn border border-secondary rounded-pill px-3 text-primary">
+						<i class="fa fa-shopping-bag me0 text-primary"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+}

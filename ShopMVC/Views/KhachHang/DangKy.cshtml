@@ -1,0 +1,140 @@
+﻿@model ShopMVC.ViewModels.RegisterVM
+@{
+	ViewData["Title"] = "Đăng ký";
+}
+
+<div class="bg-light py-3 py-md-5">
+	<div class="container">
+		<div class="row justify-content-md-center" style="margin-top: 130px">
+			<div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+				<div class="bg-white p-4 p-md-5 rounded shadow-sm">
+					<div class="row">
+						<div class="col-12">
+							<div class="mb-5">
+								<h2 class="h3">
+									 Đăng ký Thảo Linh Shop
+								</h2>
+								<h3 class="fs-6 fw-normal text-secondary m-0">Nhập thông tin của bạn để đăng ký</h3>
+							</div>
+						</div>
+					</div>
+					<form asp-action="DangKy" enctype="multipart/form-data">
+						<div class="row gy-3 gy-md-4 overflow-hidden">
+
+							<div class="col-12">
+								<label asp-for="@Model.MaKh" class="form-label">@* chỗ lấy Display(Name) *@</label>
+								<span class="text-danger">*</span>
+								<input asp-for="@Model.MaKh" class="form-control" placeholder="Nhập tên đăng nhập">
+								<span asp-validation-for="@Model.MaKh" class="text-danger"></span>
+							</div>
+
+							<div class="col-12">
+								<label asp-for="@Model.MatKhau" class="form-label">@* chỗ lấy Display(Name) *@</label>
+								<span class="text-danger">*</span>
+								<input asp-for="@Model.MatKhau" class="form-control" placeholder="Nhập mật khẩu">
+								<span asp-validation-for="@Model.MatKhau" class="text-danger"></span>
+							</div>
+
+							<div class="col-12">
+								<label asp-for="@Model.HoTen" class="form-label">@* chỗ lấy Display(Name) *@</label>
+								<span class="text-danger">*</span>
+								<input asp-for="@Model.HoTen" class="form-control" placeholder="Nhập họ và tên">
+								<span asp-validation-for="@Model.HoTen" class="text-danger"></span>
+							</div>
+
+							<div class="col-12">
+								<label asp-for="GioiTinh" class="form-label"></label>
+								<span class="text-danger">*</span>
+								<div class="form-check">
+									<input asp-for="GioiTinh" class="form-check-input" type="radio" value="Nam" id="GioiTinh_Nam">
+									<label class="form-check-label" for="GioiTinh_Nam">Nam</label>
+								</div>
+								<div class="form-check">
+									<input asp-for="GioiTinh" class="form-check-input" type="radio" value="Nữ" id="GioiTinh_Nu">
+									<label class="form-check-label" for="GioiTinh_Nu">Nữ</label>
+								</div>
+							</div>
+
+							<div class="col-12">
+								<label asp-for="@Model.NgaySinh" class="form-label">@* chỗ lấy Display(Name) *@</label>
+								<input asp-for="@Model.NgaySinh" class="form-control">
+								<span asp-validation-for="@Model.NgaySinh" class="text-danger"></span>
+							</div>
+
+							<div class="col-12">
+								<label asp-for="@Model.DiaChi" class="form-label">@* chỗ lấy Display(Name) *@</label>
+								<span class="text-danger">*</span>
+								<input asp-for="@Model.DiaChi" class="form-control">
+								<span asp-validation-for="@Model.DiaChi" class="text-danger"></span>
+							</div>
+
+							<div class="col-12">
+								<label asp-for="@Model.DienThoai" class="form-label">@* chỗ lấy Display(Name) *@</label>
+								<span class="text-danger">*</span>
+								<input asp-for="@Model.DienThoai" class="form-control">
+								<span asp-validation-for="@Model.DienThoai" class="text-danger"></span>
+							</div>
+
+							<div class="col-12">
+								<label asp-for="@Model.Email" class="form-label">@* chỗ lấy Display(Name) *@</label>
+								<span class="text-danger">*</span>
+								<input asp-for="@Model.Email" class="form-control">
+								<span asp-validation-for="@Model.Email" class="text-danger"></span>
+							</div>
+
+
+							<div class="col-12">
+								<label for="Hinh" class="form-label">Hình</label>
+								<input type="file" name="Hinh" class="form-control">
+							</div>
+
+
+
+							<div class="col-12">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
+									<label class="form-check-label text-secondary" for="iAgree">
+										Tôi đồng ý <a href="#!" class="link-primary text-decoration-none">với các điều khoản</a>
+									</label>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="d-grid">
+									<button class="btn btn-lg btn-primary" type="submit">Đăng ký</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="row">
+						<div class="col-12">
+							<hr class="mt-5 mb-4 border-secondary-subtle">
+							<div class="col-12">
+								<p class="m-0 text-secondary text-center">Bạn đã có tài khoản <a href="#!" class="link-primary text-decoration-none">Đăng nhập</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<p class="mt-5 mb-4">Hoặc đăng nhập bằng</p>
+							<div class="d-flex gap-3 flex-column flex-md-row">
+								<a href="#!" class="btn bsb-btn-xl btn-outline-primary">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+										<path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+									</svg>
+									<span class="ms-2 fs-6">Google</span>
+								</a>
+								<a href="#!" class="btn bsb-btn-xl btn-outline-primary">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+										<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+									</svg>
+									<span class="ms-2 fs-6">Facebook</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

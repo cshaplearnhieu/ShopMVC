@@ -1,0 +1,7 @@
+﻿@model IEnumerable<ShopMVC.ViewModels.MenuLoaiVM>
+
+@foreach (var danhMuc in Model)
+{
+
+	<a asp-controller="HangHoa" asp-action="Index" asp-route-loai="@danhMuc.MaLoai" class="dropdown-item">@danhMuc.TenLoai</a>
+}

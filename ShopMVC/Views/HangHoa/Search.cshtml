@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ShopMVC.ViewModels.HangHoaVM>
+@{
+    ViewData["Title"] = "Tìm kiếm";
+    Layout = "_DanhSachHangHoa";
+}
+
+<h1>Tìm kiếm</h1>
+<h6>Có @Model.Count() sản phẩm </h6>
+
+@await Html.PartialAsync("ProducItem", Model)
+
