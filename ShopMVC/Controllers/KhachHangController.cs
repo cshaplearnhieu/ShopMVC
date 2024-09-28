@@ -76,7 +76,7 @@ namespace ShopMVC.Controllers
                 var KhachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == model.UserName);
                 if (KhachHang == null)
                 {
-                    ModelState.AddModelError("Loi", "Sai thông tin đăng nhập");
+                    ModelState.AddModelError("Loi", "Sai tên đăng nhập hoặc mật khẩu");
                 }
                 else
                 {
@@ -88,7 +88,7 @@ namespace ShopMVC.Controllers
                     {
                         if (KhachHang.MatKhau != model.Password.ToMd5Hash(KhachHang.RandomKey))
                         {
-                            ModelState.AddModelError("Loi", "Sai thông tin đăng nhập");
+                            ModelState.AddModelError("Loi", "Sai tên đăng nhập hoặc mật khẩu");
                         }
                         else
                         {
