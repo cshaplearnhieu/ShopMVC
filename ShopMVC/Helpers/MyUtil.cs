@@ -26,7 +26,7 @@ namespace ShopMVC.Helpers
         public static string GenerateRandomKey(int length = 5)
         {
             var pattern =
-                @"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM~!@#$%^&*";
+				@"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789~!@#$%^&*";
             var sb = new StringBuilder();
             var rd = new Random();
             for (int i = 0; i < length; i++)

@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using ShopMVC.Data;
@@ -26,10 +27,22 @@ namespace ShopMVC
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
-            //https://docs.automapper.org/en/stable/Dependency-injection.html
-            builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+			////https://docs.automapper.org/en/stable/Dependency-injection.html
+			//builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option
+			//cau hinh automapper
+			var mapperConfig = new MapperConfiguration(mc =>
+			{
+				mc.AddProfile(new AutoMapperProfile());
+			});
+			IMapper mapper = mapperConfig.CreateMapper();
+			builder.Services.AddSingleton(mapper);
+
+
+			builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+
+			builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option
                 =>
             {
                 option.LoginPath = "/KhachHang/DangNhap";

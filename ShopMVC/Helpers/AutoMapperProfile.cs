@@ -9,6 +9,7 @@ namespace ShopMVC.Helpers
         public AutoMapperProfile() 
         {
             CreateMap<RegisterVM, KhachHang>();
+            
             //.ForMenber(kh => kh.HoTen, option => option.MapFropm(RegisterVM => RegisterVM.HoTen))
             //    .ReverseMap();
         }

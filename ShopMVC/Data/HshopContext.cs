@@ -52,7 +52,7 @@ public partial class HshopContext : DbContext
     public virtual DbSet<YeuThich> YeuThiches { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name = HShop ");
+        => optionsBuilder.UseSqlServer("Name = HShop");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

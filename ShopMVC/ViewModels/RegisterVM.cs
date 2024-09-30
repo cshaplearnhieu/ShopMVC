@@ -4,6 +4,7 @@ namespace ShopMVC.ViewModels
 {
 	public class RegisterVM
 	{
+		[Key]
 		[Display(Name ="Tên đăng nhập")]
 		[Required(ErrorMessage ="Vui lòng nhập tên đăng nhập")]
 		[MaxLength(20, ErrorMessage ="Tối đa 20 ký tự")]
@@ -23,7 +24,7 @@ namespace ShopMVC.ViewModels
 
 
 		[Display(Name = "Giới tính")]
-		[Required(ErrorMessage = "Vui lòng chọn giới tính")]
+		
 		public bool GioiTinh { get; set; } = true;
 
 
@@ -52,8 +53,8 @@ namespace ShopMVC.ViewModels
 		public string Email { get; set; }
 
 
-		[Display(Name = "Hình")]
+		//[Display(Name = "Hình")]
 		
-		public string? Hinh { get; set; }
+		//public string? Hinh { get; set; }
 	}
 }
