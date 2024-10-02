@@ -1,0 +1,14 @@
+﻿@model ShopMVC.Areas.Admin.ViewModelsAd.LoaiAdVM
+@{
+    ViewData["Title"] = "Sửa loại hàng hoá";
+}
+<form asp-action="Sua" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="MaLoai" value="@Model.MaLoai" />
+    <div class="form-group">
+        <label for="TenHH">Tên loại hàng hoá</label>
+        <input type="text" class="form-control" id="TenLoai" name="TenLoai" value="@Model.TenLoai" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+</form>
+

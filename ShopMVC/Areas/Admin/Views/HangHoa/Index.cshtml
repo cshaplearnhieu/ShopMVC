@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ShopMVC.Areas.Admin.ViewModelsAd.HangHoaAdVM>
+@{
+    ViewData["Title"] = "Quản lý hàng hoá";
+   
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã hàng hoá</th>
+            <th>Tên hàng hoá</th>
+            <th>Đơn giá</th>
+            <th>Mô tả</th>
+            <th>Tên Loại</th>
+            <th>Hình</th>
+            <th>Chỉnh sửa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaHH</td>
+                <td>@item.TenHH</td>
+                <td>@item.DonGia</td>
+                <td>@item.MoTa</td>
+                <td>@item.TenLoai</td>
+                <td><img src="@item.Hinh" alt="Hinh" width="50" /></td>
+                <td>
+                    <a asp-action="Sua" asp-route-id="@item.MaHH" class="btn btn-warning">Sửa</a>
+                    <a asp-action="Xoa" asp-route-id="@item.MaHH" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

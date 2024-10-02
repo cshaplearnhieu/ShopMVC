@@ -18,8 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Data\" />
     <Folder Include="Views\Shared\Components\MenuLoai\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\LayoutAdmin\.DS_Store" />
   </ItemGroup>
 
 </Project>

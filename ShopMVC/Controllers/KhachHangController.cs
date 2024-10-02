@@ -116,6 +116,7 @@ namespace ShopMVC.Controllers
 							new Claim(ClaimTypes.Email, KhachHang.Email),
 							new Claim(ClaimTypes.Name, KhachHang.HoTen),
 							new Claim(MySetting.CLAIM_CUSTOMERID, KhachHang.MaKh),
+
                             //claim - role động 
                             new Claim(ClaimTypes.Role, "Customer")
 							};

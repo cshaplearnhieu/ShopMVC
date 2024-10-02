@@ -1,0 +1,32 @@
+﻿@model ShopMVC.Areas.Admin.ViewModelsAd.HangHoaAdVM
+@{
+    ViewData["Title"] = "Thêm hàng hoá";
+}
+
+<form asp-action="Them" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="TenHH">Tên Hàng Hóa</label>
+        <input type="text" class="form-control" id="TenHH" name="TenHH" required />
+    </div>
+    <div class="form-group">
+        <label for="DonGia">Đơn Giá</label>
+        <input type="number" class="form-control" id="DonGia" name="DonGia" required />
+    </div>
+    <div class="form-group">
+        <label for="MoTa">Mô Tả</label>
+        <textarea class="form-control" id="MoTa" name="MoTa"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="MaLoai">Loại Sản Phẩm</label>
+        <select class="form-control" id="MaLoai" name="MaLoai">
+            <!-- Gắn danh sách loại hàng hóa vào đây -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Hinh">Hình Ảnh</label>
+        <input type="file" class="form-control" id="Hinh" name="Hinh" />
+    </div>
+    <button type="submit" class="btn btn-primary">Thêm</button>
+</form>
+
+

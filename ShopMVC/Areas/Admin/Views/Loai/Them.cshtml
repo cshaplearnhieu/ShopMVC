@@ -1,0 +1,17 @@
+﻿@model ShopMVC.Areas.Admin.ViewModelsAd.LoaiAdVM
+
+@{
+    ViewData["Title"] = "Thêm loại";
+}
+
+<h2>Thêm loại hàng hóa</h2>
+
+<form asp-action="Them" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="TenLoai">Tên loại</label>
+        <input type="text" class="form-control" id="TenLoai" name="TenLoai" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Thêm</button>
+    <a asp-action="Index" class="btn btn-secondary">Trở về danh sách</a>
+</form>
